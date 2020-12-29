@@ -8,7 +8,7 @@ namespace AluraTunes.Data
 {
     class Context:DbContext
     {
-        public Context():base()
+        public Context(DbContextOptions options):base(options)
         {
 
         }
