@@ -1,16 +1,21 @@
 ﻿using AluraTunes.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AluraTunes.Data
 {
     class Context:DbContext
     {
-        public Context(DbContextOptions options):base(options)
-        {
+        private readonly string _connectionString;
 
+        public Context(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(_connectionString);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
