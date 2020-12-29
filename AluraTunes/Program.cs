@@ -49,11 +49,11 @@ namespace AluraTunes
         {
             return new List<Genero>()
             {
-                new Genero() { Id = 1, Nome = "Rock" },
-                new Genero() { Id = 2, Nome = "Regae" },
-                new Genero() { Id = 3, Nome = "Rock Progresivo" },
-                new Genero() { Id = 4, Nome = "Punk Rock" },
-                new Genero() { Id = 5, Nome = "Classica" }
+                new Genero() { GeneroId = 1, Nome = "Rock" },
+                new Genero() { GeneroId = 2, Nome = "Regae" },
+                new Genero() { GeneroId = 3, Nome = "Rock Progresivo" },
+                new Genero() { GeneroId = 4, Nome = "Punk Rock" },
+                new Genero() { GeneroId = 5, Nome = "Classica" }
             };
         }
     }
