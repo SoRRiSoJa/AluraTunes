@@ -6,31 +6,31 @@ namespace AluraTunes.Data
 {
     class Context:DbContext
     {
-        private readonly string _connectionString;
+        private readonly string  strConn;
 
-        public Context(string connectionString)
+        public Context(string strConn)
         {
-            _connectionString = connectionString;
+            this.strConn = strConn;
         }
-
+        public Context()
+        {
+            this.strConn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\joao.silva\Documents\Alura\AluraTunes\AluraTunes\Data\AluraTunes.mdf;Integrated Security=True";
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_connectionString);
+        { 
+            optionsBuilder.UseSqlServer(strConn);
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            throw new Exception();
-        }
+        
 
-        public virtual DbSet<Album> Albums { get; set; }
-        public virtual DbSet<Artista> Artistas { get; set; }
-        public virtual DbSet<Cliente> Clientes { get; set; }
-        public virtual DbSet<Faixa> Faixas { get; set; }
-        public virtual DbSet<Funcionario> Funcionarios { get; set; }
-        public virtual DbSet<Genero> Generos { get; set; }
-        public virtual DbSet<ItemNotaFiscal> ItemNotaFiscals { get; set; }
-        public virtual DbSet<NotaFiscal> NotaFiscals { get; set; }
-        public virtual DbSet<Playlist> Playlists { get; set; }
-        public virtual DbSet<TipoMidia> TipoMidias { get; set; }
+        public virtual DbSet<Album> Album { get; set; }
+        public virtual DbSet<Artista> Artista { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Faixa> Faixa { get; set; }
+        public virtual DbSet<Funcionario> Funcionario { get; set; }
+        public virtual DbSet<Genero> Genero { get; set; }
+        public virtual DbSet<ItemNotaFiscal> ItemNotaFiscal { get; set; }
+        public virtual DbSet<NotaFiscal> NotaFiscal { get; set; }
+        public virtual DbSet<Playlist> Playlist { get; set; }
+        public virtual DbSet<TipoMidia> TipoMidia { get; set; }
     }
 }

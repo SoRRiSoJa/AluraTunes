@@ -17,7 +17,7 @@ namespace AluraTunes.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cliente()
         {
-            this.NotaFiscals = new HashSet<NotaFiscal>();
+            this.NotaFiscal = new HashSet<NotaFiscal>();
         }
     
         public int ClienteId { get; set; }
@@ -32,10 +32,10 @@ namespace AluraTunes.Model
         public string Fone { get; set; }
         public string Fax { get; set; }
         public string Email { get; set; }
-        public Nullable<int> SuporteId { get; set; }
+        public int SuporteId { get; set; }
     
         public virtual Funcionario Funcionario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NotaFiscal> NotaFiscals { get; set; }
+        public virtual ICollection<NotaFiscal> NotaFiscal { get; set; }
     }
 }

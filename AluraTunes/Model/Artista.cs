@@ -17,13 +17,13 @@ namespace AluraTunes.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Artista()
         {
-            this.Albums = new HashSet<Album>();
+            this.Album = new HashSet<Album>();
         }
     
         public int ArtistaId { get; set; }
         public string Nome { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Album> Album { get; set; }
     }
 }
